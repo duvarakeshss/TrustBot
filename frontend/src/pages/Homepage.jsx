@@ -54,6 +54,7 @@ const Homepage = () => {
               </button>
               <button 
                 className="px-6 py-3 border-2 border-cyan-400 text-white rounded-lg hover:bg-cyan-400 hover:text-black transition"
+                onClick={() => navigate("/signup")} 
               >
                 Sign Up
               </button>

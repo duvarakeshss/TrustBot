@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 
 const LoginPage = () => {
   const [animationData, setAnimationData] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadAnimation = async () => {
@@ -13,7 +15,7 @@ const LoginPage = () => {
         setAnimationData(data);
       } catch (error) {
         console.error("Error loading animation:", error);
-      }//
+      }
     };
     loadAnimation();
   }, []);
@@ -25,7 +27,7 @@ const LoginPage = () => {
 
       <div className="relative z-10 flex flex-col md:flex-row-reverse items-center justify-between w-full max-w-5xl p-10 bg-opacity-20 backdrop-blur-2xl rounded-xl shadow-2xl border border-gray-700">
 
-=        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 flex justify-center">
           {animationData ? (
             <Lottie animationData={animationData} loop={true} className="w-72 md:w-96" />
           ) : (
@@ -70,7 +72,12 @@ const LoginPage = () => {
 
           <p className="text-gray-400 text-sm font-light">
             Don't have an account?{" "}
-            <a href="#" className="text-cyan-400 hover:underline font-medium tracking-wide">Sign up</a>
+            <button 
+              onClick={() => navigate("/signup")}
+              className="text-cyan-400 hover:underline font-medium tracking-wide"
+            >
+              Sign up
+            </button>
           </p>
         </div>
 
