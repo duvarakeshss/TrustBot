@@ -13,7 +13,7 @@ const LoginPage = () => {
         setAnimationData(data);
       } catch (error) {
         console.error("Error loading animation:", error);
-      }
+      }//
     };
     loadAnimation();
   }, []);
